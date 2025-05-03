@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+
+<suite name="SingleBrowserTestSuite" parallel="false">
+    <test name="ChromeSingleTests">
+        <parameter name="browserType" value="chrome"/>
+        <classes>
+            <class name="runners.AllTestRunner"/>
+        </classes>
+    </test>
+</suite>

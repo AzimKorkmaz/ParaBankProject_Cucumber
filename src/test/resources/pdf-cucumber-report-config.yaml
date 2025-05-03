@@ -1,0 +1,20 @@
+dashboardConfig:
+  title: "My Cucumber PDF Report"
+  titleColor: "#3366ff"
+
+detailedFeatureConfig:
+  featureNameColor: "#333333"
+
+detailedScenarioConfig:
+  scenarioNameColor: "#666666"
+
+detailedStepHookConfig:
+  stepTextColor: "#000000"
+  errorMsgColor: "#ff0000"
+  logMsgColor: "#009900"
+  defaultCount: 10
+
+# Optionally add overallSummaryConfig
+overallSummaryConfig:
+  title: "Test Summary"
+  titleColor: "#123456"
