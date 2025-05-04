@@ -1,9 +1,12 @@
 package utilities;
 
 import org.openqa.selenium.JavascriptExecutor;
+import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.Select;
+import org.testng.Assert;
 
 public class ReusableMethods {
     public Actions action;
@@ -28,5 +31,23 @@ public class ReusableMethods {
     public void scrollToElement(WebElement element) {
         JavascriptExecutor js = (JavascriptExecutor) GWD.getDriver();
         js.executeScript("arguments[0].scrollIntoView();", element);
+    }
+
+    public void jsClickToElement(WebElement element) {
+        GWD.getWait().until(ExpectedConditions.elementToBeClickable(element));
+        JavascriptExecutor js = (JavascriptExecutor) GWD.getDriver();
+        js.executeScript("arguments[0].click();", element);
+    }
+
+    public void selectByText(WebElement element, String text) {
+        GWD.getWait().until(ExpectedConditions.visibilityOf(element));
+        Select select = new Select(element);
+        select.selectByVisibleText(text);
+    }
+
+    public void verifyContainsMessage(WebElement element, String value) {
+        GWD.getWait().until(ExpectedConditions.textToBePresentInElement(element, value));
+        Assert.assertTrue(element.getText().toLowerCase().contains(value.toLowerCase()));
+        action.sendKeys(Keys.ESCAPE).build().perform();
     }
 }
