@@ -76,6 +76,9 @@ public class RegisterAndLogin extends ReusableMethods {
     @FindBy(css = "[class='error']")
     public WebElement errorMessage;
 
+    @FindBy(xpath = "//h1[contains(text(), 'Accounts Overview')]")
+    public WebElement accountOverview;
+
     public boolean alreadyAdded() {
         try {
             return usernameErrorMessage.getText().contains("already");
