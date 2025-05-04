@@ -4,10 +4,11 @@ import com.aventstack.extentreports.service.ExtentService;
 import io.cucumber.testng.AbstractTestNGCucumberTests;
 import io.cucumber.testng.*;
 import org.testng.annotations.*;
+import utilities.GWD;
 
 import java.time.LocalDateTime;
 
-@CucumberOptions(features = {"src/test/java/featureFiles"},
+@CucumberOptions(features = {"src/test/java/featureFiles/UserRegistration.feature"},
         glue = {"stepDefinitions"},
         plugin = {"pretty", "com.aventstack.extentreports.cucumber.adapter.ExtentCucumberAdapter:"})
 public class AllTestRunner extends AbstractTestNGCucumberTests {
@@ -21,7 +22,7 @@ public class AllTestRunner extends AbstractTestNGCucumberTests {
         ExtentService.getInstance().setSystemInfo("Execution Date", LocalDateTime.now().toString());
         ExtentService.getInstance().setSystemInfo("User Name", "Bug Fathers");
         ExtentService.getInstance().setSystemInfo("Team Name", "Team#4");
-        ExtentService.getInstance().setSystemInfo("Application Name", "E-Junkie Demo Shop");
+        ExtentService.getInstance().setSystemInfo("Application Name", "Para Bank Project");
         ExtentService.getInstance().setSystemInfo("Test Tag", "All Test Runner");
         ExtentService.getInstance().setSystemInfo("Operating System Info", System.getProperty("os.name"));
         ExtentService.getInstance().setSystemInfo("Department", "QA");

@@ -15,8 +15,8 @@ public class GWD {
     public static ThreadLocal<String> threadBrowserName = new ThreadLocal<>();
 
     public static WebDriver getDriver() {
-        Locale.setDefault(new Locale("EN"));
-        System.setProperty("user.language", "EN");
+        Locale.setDefault(new Locale("en"));
+        System.setProperty("user.language", "en");
 
         if (threadDriver.get() == null) {
             String browser = threadBrowserName.get();

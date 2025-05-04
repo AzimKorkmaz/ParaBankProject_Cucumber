@@ -6,5 +6,5 @@ target/
 .idea/
 *.iml
 workspace.xml
-!/configuration.properties
 !/target/
+!/configuration.properties

@@ -1,7 +1,6 @@
 package utilities;
 
 import net.datafaker.Faker;
-
 import java.io.FileInputStream;
 import java.io.FileOutputStream;
 import java.io.IOException;
@@ -22,7 +21,6 @@ public class ConfigReader {
             e.printStackTrace();
         }
     }
-
     private static void saveProperties() {
         try (FileOutputStream outputFile = new FileOutputStream(configFilePath)) {
             properties.store(outputFile, "Updated Dynamic Properties");
