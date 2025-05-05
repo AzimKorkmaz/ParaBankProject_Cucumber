@@ -73,7 +73,7 @@ public class RegisterAndLogin extends ReusableMethods {
     @FindBy(css = "[id='leftPanel']>h2")
     public WebElement loginCheck;
 
-    @FindBy(css = "[class='error']")
+    @FindBy(xpath = "//h1[text()='Error!']")
     public WebElement errorMessage;
 
     @FindBy(xpath = "//h1[contains(text(), 'Accounts Overview')]")
