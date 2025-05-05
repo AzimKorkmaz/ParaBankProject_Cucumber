@@ -8,6 +8,8 @@ import org.openqa.selenium.support.PageFactory;
 import utilities.GWD;
 import utilities.ReusableMethods;
 
+import java.util.List;
+
 public class RegisterAndLogin extends ReusableMethods {
     public Actions action;
 
@@ -74,7 +76,10 @@ public class RegisterAndLogin extends ReusableMethods {
     public WebElement loginCheck;
 
     @FindBy(xpath = "//h1[text()='Error!']")
-    public WebElement errorMessage;
+    public List<WebElement> errorMessage;
+
+    @FindBy(xpath = "//h1[text()='Error!']")
+    public WebElement errorMessageText;
 
     @FindBy(xpath = "//h1[contains(text(), 'Accounts Overview')]")
     public WebElement accountOverview;
