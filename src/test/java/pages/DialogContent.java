@@ -15,7 +15,6 @@ public class DialogContent extends ReusableMethods {
         this.action = new Actions(GWD.getDriver());
     }
 /// Bill Payment Service LOCATORS
-
     @FindBy(name = "payee.name")
     public WebElement payeeNameField;
 
@@ -29,7 +28,7 @@ public class DialogContent extends ReusableMethods {
     public WebElement payeeAddressStateField;
 
     @FindBy(name = "payee.address.zipCode")
-    public WebElement payeeAddressZipCodeieldField;
+    public WebElement payeeAddressZipCodeField;
 
     @FindBy(name = "payee.phoneNumber")
     public WebElement payeePhoneNumberField;
@@ -45,6 +44,4 @@ public class DialogContent extends ReusableMethods {
 
     @FindBy(xpath = "//input[@value='Send Payment']")
     public WebElement SendPaymentButton;
-
-
 }
