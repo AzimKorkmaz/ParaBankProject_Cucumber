@@ -16,26 +16,26 @@ public class LeftNav extends ReusableMethods {
     }
 
     @FindBy(linkText = "Open New Account")
-    public WebElement openNewAccountBotton;
+    public WebElement openNewAccountButton;
 
     @FindBy(linkText = "Accounts Overview")
-    public WebElement accountsOverviewBotton;
+    public WebElement accountsOverviewButton;
 
     @FindBy(linkText = "Transfer Funds")
-    public WebElement transferFundsBotton;
+    public WebElement transferFundsButton;
 
     @FindBy(linkText = "Bill Pay")
-    public WebElement billPayBotton;
+    public WebElement billPayButton;
 
     @FindBy(linkText = "Find Transactions")
-    public WebElement findTransactionsBotton;
+    public WebElement findTransactionsButton;
 
     @FindBy(linkText = "Update Contact Info")
-    public WebElement updateContactInfoBotton;
+    public WebElement updateContactInfoButton;
 
     @FindBy(linkText = "Request Loan")
-    public WebElement requestLoanBotton;
+    public WebElement requestLoanButton;
 
     @FindBy(linkText = "Log Out")
-    public WebElement logOutBotton;
+    public WebElement logOutButton;
 }
