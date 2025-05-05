@@ -4,10 +4,9 @@
 
 - [Project Description](#project-description)
 - [Project Structure](#project-structure)
-- [Technologies Used](#technologies-used)
+- [Technologies Used and Dependencies](#-technologies-used-and-dependencies)
 - [Installation](#installation)
 - [Usage](#usage)
-- [Dependencies](#dependencies)
 - [User Stories & Test Scenarios](#user-stories--test-scenarios)
 - [Test Coverage Table](#test-coverage-table)
 - [Test Reports](#test-reports)
@@ -81,7 +80,10 @@ ParaBankProject_Cucumber/
 
 ---
 
-## 🧰 Technologies Used
+## 🧰 Technologies Used and Dependencies
+
+All required dependencies are declared in `pom.xml`.
+Ensure Maven updates all packages automatically.
 
 | Tool / Library                 | Description                                         |
 |--------------------------------|-----------------------------------------------------|
@@ -124,23 +126,6 @@ ParaBankProject_Cucumber/
 
 ---
 
-## 📦 Dependencies
-
-All required dependencies are declared in `pom.xml`.
-Ensure Maven updates all packages automatically.
-
-Key dependencies include:
-
-- Selenium
-- Cucumber Java & TestNG
-- ExtentReports (Spark & PDF)
-- SLF4J + Log4j
-- Healenium-web
-- Java Faker Library
-- Apache POI
-
----
-
 ### 🧾 Key Features Tested
 
 - ✅ **User Registration:** Creation of user accounts and success message validation.
@@ -164,35 +149,54 @@ log in to the system.
 
 ✅ Actual: The user filled in the form, registered, received a success message and logged into the system.
 
-<img src="testGifs/US301.gif" alt=".gif" width="800" height="500"/>
+<img src="testGifs/US_601.gif" alt=".gif" width="800" height="500"/>
 
 ### **2️⃣ US_602 - User Login**
 
-📌 As a customer,
+#### ➕ **Positive Scenario**
+📌  The user wants to log in to the system with a valid username and password.
 
-✅ Expected:
+✅ Expected: The user must be able to log in successfully and then log out.
 
-✅ Actual:
+✅ Actual: The user logged in and successfully logged out of the system.
 
-<img src="testGifs/US302.gif" alt=".gif" width="800" height="500"/>
+<img src="testGifs/US_602.gif" alt=".gif" width="800" height="500"/>
+
+#### ➖ **Negative Scenario**
+📌  The user is trying to log in to the system with invalid information.
+
+✅ Expected: The input must fail and an appropriate error message must be displayed to the user.
+
+✅ Actual:  The login failed and the user was shown an error message.
+
+
 
 ### **3️⃣ US_603 - Bill Payment**
 
-📌 As a customer,
+📌  The user wants to make payments by entering invoice types such as electricity, water or natural gas into the system.
 
-✅ Expected:
+✅ Expected: The payment must be successfully completed, updated in the system and appear in the payment list.
 
-✅ Actual:
+✅ Actual: The user made the invoice payment, the system showed a successful message and it was included in the payment list.
 
 <img src="testGifs/US303.gif" alt=".gif" width="800" height="500"/>
 
 ### **4️⃣ US_604 - New Account Creation**
+#### ➕ **Positive Scenario – Checking Account Creation**
 
-📌 As a customer,
+📌 The user wants to create a new demand deposit account on the para bank website.
 
-✅ Expected:
+✅ Expected: The user must create the new account, receive a confirmation message and see the account number.
 
-✅ Actual:
+✅ Actual:  The user created a new demand deposit account, received a confirmation message and the account number was displayed.
+
+#### ➕ **Positive Scenario – Saving Account Creation**
+
+📌 The user wants to open a new term account by entering the parabank system.
+
+✅ Expected: The new account should be created successfully and the confirmation message and account number should be displayed.
+
+✅ Actual:  The user created the new term account, the system showed a successful message and provided the account number.
 
 <img src="testGifs/US304.gif" alt=".gif" width="800" height="500"/>
 
