@@ -29,9 +29,7 @@ public class UserLoginSteps {
         ral.mySendKeys(ral.loginPassword, ConfigReader.getProperty("password"));
         ral.myClick(ral.loginButton);
 
-        List<WebElement> errorMessages = (ral.errorMessage);
-
-        if (errorMessages.size() > 0) {
+        if (ral.errorMessage.isDisplayed()) {
             do {
                 GWD.getWait().until(ExpectedConditions.visibilityOf(ral.registerButton));
                 GWD.getWait().until(ExpectedConditions.elementToBeClickable(ral.registerButton));
