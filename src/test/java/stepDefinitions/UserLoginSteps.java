@@ -17,7 +17,6 @@ public class UserLoginSteps {
     LeftNav ln = new LeftNav();
     Faker faker = new Faker(new Locale("en-US"));
 
-
     @When("The user clicks on the logout button")
     public void theUserClicksOnTheLogoutButton() {
         ln.myClick(ln.logOutButton);
@@ -55,7 +54,8 @@ public class UserLoginSteps {
                 ral.mySendKeys(ral.confirmPasswordField, ConfigReader.getProperty("password"));
                 GWD.getWait().until(ExpectedConditions.elementToBeClickable(ral.registerSubmitButton));
                 ral.myClick(ral.registerSubmitButton);
-            } while (ral.alreadyAdded());
+            }
+            while (ral.alreadyAdded());
         }
     }
 

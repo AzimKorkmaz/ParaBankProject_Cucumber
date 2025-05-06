@@ -92,7 +92,6 @@ Ensure Maven updates all packages automatically.
 | Cucumber 7.20.0                | BDD Testing Framework                               |
 | TestNG 7.10.2                  | Test Execution Engine                               |
 | ExtentReports + Adapter 1.14.0 | Spark + PDF reporting integration                   |
-| Apache POI 5.2.5               | Excel File Handling                                 |
 | Maven                          | Project Build + Dependency Manager                  |
 | SLF4J + Log4j                  | Logging                                             |
 | Healenium-web                  | Locator catching                                    |
@@ -160,7 +159,7 @@ log in to the system.
 
 ✅ Actual: The user logged in and successfully logged out of the system.
 
-<img src="testGifs/US_602.gif" alt=".gif" width="800" height="500"/>
+<img src="testGifs/US_602_Positive.gif" alt=".gif" width="800" height="500"/>
 
 #### ➖ **Negative Scenario**
 📌  The user is trying to log in to the system with invalid information.
@@ -169,7 +168,7 @@ log in to the system.
 
 ✅ Actual:  The login failed and the user was shown an error message.
 
-
+<img src="testGifs/US_602_Negative.gif" alt=".gif" width="800" height="500"/>
 
 ### **3️⃣ US_603 - Bill Payment**
 
