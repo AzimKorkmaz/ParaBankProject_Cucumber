@@ -76,7 +76,7 @@ public class RegisterAndLogin extends ReusableMethods {
     public WebElement loginCheck;
 
     @FindBy(xpath = "//h1[text()='Error!']")
-    public List<WebElement> errorMessage;
+    public WebElement errorMessage;
 
     @FindBy(xpath = "//h1[text()='Error!']")
     public WebElement errorMessageText;
