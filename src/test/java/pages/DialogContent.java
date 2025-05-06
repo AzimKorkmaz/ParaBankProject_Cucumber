@@ -7,6 +7,8 @@ import org.openqa.selenium.support.PageFactory;
 import utilities.GWD;
 import utilities.ReusableMethods;
 
+import java.util.List;
+
 public class DialogContent extends ReusableMethods {
     public Actions action;
 
@@ -14,7 +16,12 @@ public class DialogContent extends ReusableMethods {
         PageFactory.initElements(GWD.getDriver(), this);
         this.action = new Actions(GWD.getDriver());
     }
-/// Bill Payment Service LOCATORS
+
+    ///     Bill Payment Service LOCATORS
+
+    @FindBy(xpath = "//h1[text()='Bill Payment Service']")
+    public WebElement billPayPage;
+
     @FindBy(name = "payee.name")
     public WebElement payeeNameField;
 
@@ -28,13 +35,16 @@ public class DialogContent extends ReusableMethods {
     public WebElement payeeAddressStateField;
 
     @FindBy(name = "payee.address.zipCode")
-    public WebElement payeeAddressZipCodeField;
+    public WebElement payeeAddressZipCodeieldField;
 
     @FindBy(name = "payee.phoneNumber")
     public WebElement payeePhoneNumberField;
 
     @FindBy(name = "payee.accountNumber")
     public WebElement payeeAccountNumberField;
+
+    @FindBy(name = "verifyAccount")
+    public WebElement verifyAccountField;
 
     @FindBy(name = "amount")
     public WebElement amountField;
@@ -43,5 +53,43 @@ public class DialogContent extends ReusableMethods {
     public WebElement fromAccountIdField;
 
     @FindBy(xpath = "//input[@value='Send Payment']")
-    public WebElement SendPaymentButton;
+    public WebElement sendPaymentButton;
+
+    @FindBy(id = "billpayResult")
+    public WebElement billpayResultField;
+
+    @FindBy(xpath = "//div[@id='billpayResult']/h1")
+    public WebElement billpayResultFieldText;
+
+    ///    Accounts Overview
+
+    @FindBy(id = "showOverview")
+    public WebElement showOverview;
+
+    @FindBy(xpath = "(//table[@id='accountTable']//td)[2]")
+    public WebElement currentBalance;
+
+    @FindBy(xpath = "//table[@id='accountTable']//a")
+    public WebElement account;
+
+    ///     Account Details
+
+    @FindBy(xpath = "//td[@id='balance']")
+    public WebElement lastAvailable;
+
+    ///     Account Activity
+
+    @FindBy(xpath = "//table[@id='transactionTable']//tr//a")
+    public List<WebElement> transactionTable;
+
+    @FindBy(xpath = "(//table[@id='transactionTable']//a)[1]")
+    public WebElement transaction1;
+
+    @FindBy(xpath = "(//table[@id='transactionTable']//a)[2]")
+    public WebElement transaction2;
+
+    @FindBy(xpath = "(//table[@id='transactionTable']//a)[3]")
+    public WebElement transaction3;
+
+
 }
