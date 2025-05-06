@@ -11,7 +11,8 @@ Feature: Bill Payment Functionality
     Then The user enters the information of the "<institution>" invoice to be paid
     And clicks the SendPayment button
     Then The user clicks on the Accounts Overview button
-    And clicks on your account to check the payment
+    And checks the payment
+    And clicks on his account number to check "<institution>"
 
 
     Examples:

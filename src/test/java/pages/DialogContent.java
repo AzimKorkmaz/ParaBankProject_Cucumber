@@ -77,19 +77,13 @@ public class DialogContent extends ReusableMethods {
     @FindBy(xpath = "//td[@id='balance']")
     public WebElement lastAvailable;
 
+    @FindBy(id = "accountDetails")
+    public WebElement accountDetailsText;
+
     ///     Account Activity
 
-    @FindBy(xpath = "//table[@id='transactionTable']//tr//a")
+    @FindBy(xpath = "//a[contains(text(),'Bill Payment to')]")
     public List<WebElement> transactionTable;
-
-    @FindBy(xpath = "(//table[@id='transactionTable']//a)[1]")
-    public WebElement transaction1;
-
-    @FindBy(xpath = "(//table[@id='transactionTable']//a)[2]")
-    public WebElement transaction2;
-
-    @FindBy(xpath = "(//table[@id='transactionTable']//a)[3]")
-    public WebElement transaction3;
 
 
 }

@@ -2,6 +2,7 @@ package stepDefinitions;
 
 import com.github.javafaker.Faker;
 import io.cucumber.java.en.*;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.testng.Assert;
 import pages.*;
@@ -13,6 +14,14 @@ public class BillPaymentSteps {
     LeftNav ln = new LeftNav();
     DialogContent dc = new DialogContent();
     Faker faker = new Faker(new Locale("en-US"));
+
+    @And("save the current balance for checking")
+    public void saveTheCurrentBalanceForChecking() {
+        ln.myClick(ln.accountsOverviewButton);
+        GWD.getWait().until(ExpectedConditions.visibilityOf(dc.currentBalance));
+        String currentBalance = dc.currentBalance.getText().trim().replaceAll("[^0-9.]", "");
+        ConfigReader.saveToConfig("currentBalance", currentBalance);
+    }
 
     @Given("User clicks on the BillPay button")
     public void userClicksOnTheBillPayButton() {
@@ -50,26 +59,26 @@ public class BillPaymentSteps {
         GWD.getWait().until(ExpectedConditions.visibilityOf(dc.showOverview));
     }
 
-    @And("clicks on your account to check the payment")
-    public void clicksOnYourAccountToCheckThePayment() {
-        dc.myClick(dc.account);
-//        String lastBalanceStr=dc.lastAvailable.getText().trim().replaceAll("[^0-9.]", "");
-//        System.out.println("lastBalanceStr = " + lastBalanceStr);
-//        List<WebElement> transactionTableList = dc.transactionTable;
-//        String deneme = transactionTableList.getLast().getText();
-
-//        double lastBalance = Double.parseDouble(dc.lastAvailable.getText().trim().replaceAll("[^0-9.]", ""));
-//        System.out.println("lastBalance = " + lastBalance);
-//        double firstBalance = ConfigReader.getIntProperty("currentBalance");
-//        int actualPayment = ConfigReader.getIntProperty("pay");
-//        int expectedPayment = (int) (firstBalance - lastBalance);
-//        Assert.assertEquals(actualPayment,expectedPayment,"Error in payment");
+    @And("checks the payment")
+    public void checksThePayment() {
+        GWD.getWait().until(ExpectedConditions.visibilityOf(dc.currentBalance));
+        double lastBalance = Double.parseDouble(dc.currentBalance.getText().trim().replaceAll("[^0-9.]", ""));
+        String  firstBalanceStr = ConfigReader.getProperty("currentBalance");
+        double firstBalance = Double.parseDouble(firstBalanceStr);
+        int actualPayment = ConfigReader.getIntProperty("pay");
+        int expectedPayment = (int) (firstBalance - lastBalance);
+        Assert.assertEquals(actualPayment,expectedPayment,"Error in payment");
     }
 
-    @And("save the current balance for checking")
-    public void saveTheCurrentBalanceForChecking() {
-        GWD.getWait().until(ExpectedConditions.visibilityOf(dc.currentBalance));
-        String currentBalance = dc.currentBalance.getText().trim().replaceAll("[^0-9.]", "");
-        ConfigReader.saveToConfig("currentBalance", currentBalance);
+    @And("clicks on his account number to check {string}")
+    public void clicksOnHisAccountNumberToCheck(String institution) {
+        dc.myClick(dc.account);
+        GWD.getWait().until(ExpectedConditions.visibilityOf(dc.accountDetailsText));
+        List<WebElement> transactionTableList = dc.transactionTable;
+        System.out.println("transactionTableList.size() = " + transactionTableList.size());
+//        GWD.getWait().until(ExpectedConditions.elementToBeClickable(transactionTableList.getLast()));
+//        dc.myClick(transactionTableList.getLast());
+//        System.out.println("deneme = " + deneme);
+//        System.out.println("institution = " + institution);
     }
 }
