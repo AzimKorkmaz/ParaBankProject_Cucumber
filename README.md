@@ -221,14 +221,23 @@ log in to the system.
 
 ### **7️⃣ US_607 - Loan Application**
 
-📌 As a customer,
+#### ➕ **Positive Scenario**
+📌  The user wants to apply for a loan with valid data and expects approval.
 
-✅ Expected:
+✅ Expected: The user must be able to apply for a loan, see the result instantly, receive an 'Approved' message, and see the new account number. The user should verify that there are no transactions in the new account.
 
-✅ Actual:
+✅ Actual: The user applied for a loan, received an approval message, saw the new account number, and verified that there were no transactions in the new account.
 
-<img src="testGifs/US307.gif" alt=".gif" width="800" height="500"/>
+<img src="testGifs/US_607_Positive.gif" alt="US_607_Positive" width="800" height="500"/>
 
+#### ➖ **Negative Scenario**
+📌  The user tries to apply for a loan with invalid data and expects rejection.
+
+✅ Expected: The user must see the result instantly, receive a 'Denied' message, and see the reason for the rejection.
+
+✅ Actual: The user applied for a loan with invalid data, received a denial message, and saw the reason for the rejection.
+
+<img src="testGifs/US_607_Negative.gif" alt="US_607_Negative" width="800" height="500"/>
 
 ---
 
