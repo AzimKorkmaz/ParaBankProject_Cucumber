@@ -92,6 +92,16 @@ public class DialogContent extends ReusableMethods {
     @FindBy(xpath = "//td[contains(text(),'Bill Payment to IGDAS')]")
     public WebElement igdasTransactionText;
 
+    ///   Update contact Info
     @FindBy(xpath = "//td[contains(text(),'Bill Payment to ASAT')]")
     public WebElement asatTransactionText;
+  
+    @FindBy(xpath = "//input[@value='Update Profile']")
+    public WebElement updateProfileButton;
+
+    @FindBy(xpath = "//span[@id='lastName-error']")
+    public WebElement requiredMessage;
+
+    @FindBy(xpath = "//h1[@class='title' and text()='Profile Updated']")
+    public WebElement profileUpdated;
 }
