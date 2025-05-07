@@ -85,17 +85,5 @@ public class DialogContent extends ReusableMethods {
     @FindBy(xpath = "//a[contains(text(),'Bill Payment to')]")
     public List<WebElement> transactionTable;
 
-    ///   Update contact Info
-
-    @FindBy(xpath = "//input[@value='Update Profile']")
-    public WebElement updateProfileButton;
-
-    @FindBy(xpath = "//span[@id='lastName-error']")
-    public WebElement requiredMessage;
-
-    @FindBy(xpath = "//h1[@class='title' and text()='Profile Updated']")
-    public WebElement profileUpdated;
-
-
 
 }
