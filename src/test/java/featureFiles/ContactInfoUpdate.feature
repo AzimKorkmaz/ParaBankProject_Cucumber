@@ -21,3 +21,8 @@ Feature:Contact Info Update Functionality
     Given User click on the Update Contact Info button
 
     When The user clicks on the logout button
+
+    When The user fills in the login information and clicks the login button
+    Then The user should be redirected to the account overview page
+
+    And User sees modified last name
