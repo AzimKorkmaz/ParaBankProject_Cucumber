@@ -49,4 +49,10 @@ public class ContactInfoUpdateSteps {
         GWD.getWait().until(ExpectedConditions.visibilityOf(dc.profileUpdated));
         Assert.assertTrue(dc.profileUpdated.isDisplayed(), "No visible message");
     }
+
+    @And("User sees modified last name")
+    public void userSeesModifiedLastName() {
+        GWD.getWait().until(ExpectedConditions.visibilityOf(ln.confirmationMessage));
+        Assert.assertTrue(ln.confirmationMessage.isDisplayed(), "No visible message");
+    }
 }
