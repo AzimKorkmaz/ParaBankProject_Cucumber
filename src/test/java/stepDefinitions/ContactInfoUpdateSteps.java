@@ -1,25 +1,20 @@
 package stepDefinitions;
 
-import com.github.javafaker.Faker;
-import io.cucumber.java.en.And;
-import io.cucumber.java.en.Given;
-import io.cucumber.java.en.Then;
-import io.cucumber.java.en.When;
+import io.cucumber.java.en.*;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.testng.Assert;
 import pages.DialogContent;
 import pages.LeftNav;
 import pages.RegisterAndLogin;
+import utilities.ConfigReader;
 import utilities.GWD;
-
-import java.util.Locale;
 
 public class ContactInfoUpdateSteps {
     RegisterAndLogin ral = new RegisterAndLogin();
     LeftNav ln = new LeftNav();
-    DialogContent dc=new DialogContent();
-    Faker faker = new Faker(new Locale("en-US"));
-    String surName="Malik";
+    DialogContent dc = new DialogContent();
+    String surName = ConfigReader.getProperty("surName");
+
     @Given("User click on the Update Contact Info button")
     public void userClickOnTheUpdateContactInfoButton() {
         GWD.getWait().until(ExpectedConditions.visibilityOf(ln.updateContactInfoButton));
@@ -35,12 +30,12 @@ public class ContactInfoUpdateSteps {
     @Then("User click on the update profile button")
     public void userClickOnTheUpdateProfileButton() {
         dc.myClick(dc.updateProfileButton);
-
     }
 
     @And("User will visible an error message")
     public void userWillVisibleAnErrorMessage() {
-        Assert.assertTrue(dc.requiredMessage.isDisplayed(),"No visible message");
+        GWD.getWait().until(ExpectedConditions.visibilityOf(dc.requiredMessage));
+        Assert.assertTrue(dc.requiredMessage.isDisplayed(), "No visible message");
     }
 
     @Then("User will update the relevant field")
@@ -51,6 +46,7 @@ public class ContactInfoUpdateSteps {
 
     @And("User will see the update message")
     public void userWillSeeTheUpdateMessage() {
-        Assert.assertTrue(dc.profileUpdated.isDisplayed(),"No visible message");
+        GWD.getWait().until(ExpectedConditions.visibilityOf(dc.profileUpdated));
+        Assert.assertTrue(dc.profileUpdated.isDisplayed(), "No visible message");
     }
 }
