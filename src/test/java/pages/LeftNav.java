@@ -16,7 +16,7 @@ public class LeftNav extends ReusableMethods {
     }
 
     @FindBy(linkText = "Open New Account")
-    public WebElement openNewAccountButton;
+    public WebElement openNewAccount;
 
     @FindBy(linkText = "Accounts Overview")
     public WebElement accountsOverviewButton;
@@ -44,5 +44,4 @@ public class LeftNav extends ReusableMethods {
 
     @FindBy(xpath = "//p[contains(text(), 'Malik')]")
     public WebElement confirmationMessage;
-
 }
