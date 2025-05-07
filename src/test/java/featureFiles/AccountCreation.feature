@@ -1,5 +1,4 @@
 Feature:
-#  Feature kısımını kendi storynize göre doldurunuz
 
   Background:
     Given The user navigates to the ParaBank website
@@ -11,7 +10,10 @@ Feature:
     Then The user should be redirected to the account overview page
 
   Scenario:
-#  Scenario kısımını kendi storynize göre doldurunuz
 
+  Scenario: Opening a New Account
+    When The user clicks on the Open new account area
 
-
+    Then The user selects account type
+    And the user clicks the open new account button
+    And the user should see the message that the account was created and the account number on the screen

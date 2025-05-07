@@ -7,6 +7,8 @@ import org.openqa.selenium.support.PageFactory;
 import utilities.GWD;
 import utilities.ReusableMethods;
 
+import java.util.List;
+
 public class DialogContent extends ReusableMethods {
     public Actions action;
 
@@ -95,7 +97,7 @@ public class DialogContent extends ReusableMethods {
     ///   Update contact Info
     @FindBy(xpath = "//td[contains(text(),'Bill Payment to ASAT')]")
     public WebElement asatTransactionText;
-  
+
     @FindBy(xpath = "//input[@value='Update Profile']")
     public WebElement updateProfileButton;
 
@@ -104,4 +106,28 @@ public class DialogContent extends ReusableMethods {
 
     @FindBy(xpath = "//h1[@class='title' and text()='Profile Updated']")
     public WebElement profileUpdated;
+
+    @FindBy(xpath = "(//*[text()='Open New Account'])[2]")
+    public WebElement newAccountPageControl;
+
+    @FindBy(xpath = "//select[@id='type']")
+    public WebElement selectMenu;
+
+    @FindBy(xpath = "(//div[@id='openAccountForm']/form/p/b)[2]")
+    public WebElement minBalanceText;
+
+    @FindBy(xpath = "//select[@id='fromAccountId']/option")
+    public List<WebElement> selectAccountNumber;
+
+    @FindBy(xpath = "//div[@id='openAccountResult']//p")
+    public WebElement accountOpenedText;
+
+    @FindBy(xpath = "//a[@id='newAccountId']")
+    public WebElement accountNumberClick;
+
+    @FindBy(xpath = "(//div[@id='accountDetails']//tr/td)[4]")
+    public WebElement accountType;
+
+    @FindBy(xpath = "//input[@value='Open New Account']")
+    public WebElement newAccount;
 }
