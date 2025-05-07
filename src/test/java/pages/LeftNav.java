@@ -37,7 +37,7 @@ public class LeftNav extends ReusableMethods {
     public WebElement requestLoanButton;
 
     @FindBy(linkText = "Log Out")
-    public WebElement logOutButton;
+    public WebElement logoutButton;
 
     @FindBy(xpath = "//b[text()='Welcome']")
     public WebElement welcomeText;

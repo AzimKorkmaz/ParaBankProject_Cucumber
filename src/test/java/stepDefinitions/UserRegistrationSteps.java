@@ -38,7 +38,9 @@ public class UserRegistrationSteps {
             ral.mySendKeys(ral.registerUsernameField, ConfigReader.getProperty("username"));
 
             ConfigReader.updateProperty("password");
+            GWD.getWait().until(ExpectedConditions.visibilityOf(ral.registerPasswordField));
             ral.mySendKeys(ral.registerPasswordField, ConfigReader.getProperty("password"));
+            GWD.getWait().until(ExpectedConditions.visibilityOf(ral.confirmPasswordField));
             ral.mySendKeys(ral.confirmPasswordField, ConfigReader.getProperty("password"));
             GWD.getWait().until(ExpectedConditions.elementToBeClickable(ral.registerSubmitButton));
             ral.myClick(ral.registerSubmitButton);
