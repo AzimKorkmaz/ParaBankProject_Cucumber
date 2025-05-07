@@ -51,7 +51,6 @@ public class GWD {
 
     public static void tearDown() {
         if (threadDriver.get() != null) {
-            System.out.println("Quitting driver: " + threadDriver.get().toString());
             try {
                 Thread.sleep(3000);
             } catch (InterruptedException e) {

@@ -2,7 +2,6 @@ package stepDefinitions;
 
 import com.github.javafaker.Faker;
 import io.cucumber.java.en.*;
-import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.testng.Assert;
 import pages.*;
@@ -36,11 +35,11 @@ public class BillPaymentSteps {
         dc.mySendKeys(dc.payeeAddressStreetField, faker.address().streetAddress());
         dc.mySendKeys(dc.payeeAddressCityField, faker.address().city());
         dc.mySendKeys(dc.payeeAddressStateField, faker.address().state());
-        dc.mySendKeys(dc.payeeAddressZipCodeieldField, faker.address().zipCode());
+        dc.mySendKeys(dc.payeeAddressZipCodeField, faker.address().zipCode());
         dc.mySendKeys(dc.payeePhoneNumberField, faker.phoneNumber().phoneNumber());
-        String acount = "654321";
-        dc.mySendKeys(dc.payeeAccountNumberField, acount);
-        dc.mySendKeys(dc.verifyAccountField, acount);
+        String account = "654321";
+        dc.mySendKeys(dc.payeeAccountNumberField, account);
+        dc.mySendKeys(dc.verifyAccountField, account);
         String pay = String.valueOf(faker.number().numberBetween(20, 50));
         ConfigReader.saveToConfig("pay", pay);
         dc.mySendKeys(dc.amountField, pay);
@@ -49,8 +48,7 @@ public class BillPaymentSteps {
     @And("clicks the SendPayment button")
     public void clicksTheSendPaymentButton() {
         dc.myClick(dc.sendPaymentButton);
-        GWD.getWait().until(ExpectedConditions.visibilityOf(dc.billpayResultField));
-        //Assert.assertTrue(dc.billPayPage.isDisplayed());
+        GWD.getWait().until(ExpectedConditions.visibilityOf(dc.billPayResultField));
     }
 
     @Then("The user clicks on the Accounts Overview button")
@@ -74,11 +72,24 @@ public class BillPaymentSteps {
     public void clicksOnHisAccountNumberToCheck(String institution) {
         dc.myClick(dc.account);
         GWD.getWait().until(ExpectedConditions.visibilityOf(dc.accountDetailsText));
-        List<WebElement> transactionTableList = dc.transactionTable;
-        System.out.println("transactionTableList.size() = " + transactionTableList.size());
-//        GWD.getWait().until(ExpectedConditions.elementToBeClickable(transactionTableList.getLast()));
-//        dc.myClick(transactionTableList.getLast());
-//        System.out.println("deneme = " + deneme);
-//        System.out.println("institution = " + institution);
+        dc.myClick(dc.billPaymentTransaction);
+        GWD.getWait().until(ExpectedConditions.visibilityOf(dc.transactionDetailsText));
+        boolean found = false;
+        try {
+            if (dc.tedasTransactionText.getText().contains("TEDAS")) found = true;
+            System.out.println("Tedas: " + dc.tedasTransactionText.getText());
+        } catch (Exception ignored) {}
+
+        try {
+            if (dc.igdasTransactionText.getText().contains("IGDAS")) found = true;
+            System.out.println("Igdass: " + dc.igdasTransactionText.getText());
+        } catch (Exception ignored) {}
+
+        try {
+            if (dc.asatTransactionText.getText().contains("ASAT")) found = true;
+            System.out.println("Asat: " + dc.asatTransactionText.getText());
+        } catch (Exception ignored) {}
+
+        Assert.assertTrue(found, "No matching institution (TEDAS, IGDAS, ASAT) found in transaction text!");
     }
 }

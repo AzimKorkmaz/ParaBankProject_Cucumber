@@ -7,8 +7,6 @@ import org.openqa.selenium.support.PageFactory;
 import utilities.GWD;
 import utilities.ReusableMethods;
 
-import java.util.List;
-
 public class DialogContent extends ReusableMethods {
     public Actions action;
 
@@ -35,7 +33,7 @@ public class DialogContent extends ReusableMethods {
     public WebElement payeeAddressStateField;
 
     @FindBy(name = "payee.address.zipCode")
-    public WebElement payeeAddressZipCodeieldField;
+    public WebElement payeeAddressZipCodeField;
 
     @FindBy(name = "payee.phoneNumber")
     public WebElement payeePhoneNumberField;
@@ -56,10 +54,10 @@ public class DialogContent extends ReusableMethods {
     public WebElement sendPaymentButton;
 
     @FindBy(id = "billpayResult")
-    public WebElement billpayResultField;
+    public WebElement billPayResultField;
 
     @FindBy(xpath = "//div[@id='billpayResult']/h1")
-    public WebElement billpayResultFieldText;
+    public WebElement billPayResultFieldText;
 
     ///    Accounts Overview
 
@@ -83,10 +81,21 @@ public class DialogContent extends ReusableMethods {
     ///     Account Activity
 
     @FindBy(xpath = "//a[contains(text(),'Bill Payment to')]")
-    public List<WebElement> transactionTable;
+    public WebElement billPaymentTransaction;
+
+    @FindBy(xpath = "//h1[@class='title']")
+    public WebElement transactionDetailsText;
+
+    @FindBy(xpath = "//td[contains(text(),'Bill Payment to TEDAS')]")
+    public WebElement tedasTransactionText;
+
+    @FindBy(xpath = "//td[contains(text(),'Bill Payment to IGDAS')]")
+    public WebElement igdasTransactionText;
 
     ///   Update contact Info
-
+    @FindBy(xpath = "//td[contains(text(),'Bill Payment to ASAT')]")
+    public WebElement asatTransactionText;
+  
     @FindBy(xpath = "//input[@value='Update Profile']")
     public WebElement updateProfileButton;
 
@@ -95,7 +104,4 @@ public class DialogContent extends ReusableMethods {
 
     @FindBy(xpath = "//h1[@class='title' and text()='Profile Updated']")
     public WebElement profileUpdated;
-
-
-
 }
