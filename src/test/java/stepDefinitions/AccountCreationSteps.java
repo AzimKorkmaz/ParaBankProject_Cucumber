@@ -25,6 +25,7 @@ public class AccountCreationSteps {
 
     @And("the user clicks the open new account button")
     public void theUserClicksTheOpenNewAccountButton() {
+        GWD.getWait().until(ExpectedConditions.visibilityOf(dc.newAccount));
         GWD.getWait().until(ExpectedConditions.elementToBeClickable(dc.newAccount));
         dc.myClick(dc.newAccount);
     }
