@@ -151,7 +151,6 @@ log in to the system.
 <img src="testGifs/US_601.gif" alt=".gif" width="800" height="500"/>
 
 ### **2️⃣ US_602 - User Login**
-
 #### ➕ **Positive Scenario**
 
 📌 The user wants to log in to the system with a valid username and password.
@@ -184,7 +183,6 @@ list.
 <img src="testGifs/US_603_.gif" alt=".gif" width="800" height="500"/>
 
 ### **4️⃣ US_604 - New Account Creation**
-
 #### ➕ **Positive Scenario – Checking Account Creation**
 
 📌 The user wants to create a new demand deposit account on the para bank website.
@@ -193,6 +191,8 @@ list.
 
 ✅ Actual:  The user created a new demand deposit account, received a confirmation message and the account number was
 displayed.
+
+<img src="testGifs/US_604.gif" alt=".gif" width="800" height="500"/>
 
 #### ➕ **Positive Scenario – Saving Account Creation**
 
@@ -204,10 +204,8 @@ displayed.
 ✅ Actual:  The user created the new term account, the system showed a successful message and provided the account
 number.
 
-<img src="testGifs/US304.gif" alt=".gif" width="800" height="500"/>
 
 ### **5️⃣ US_605 - Money Transfer**
-
 #### ➕ **Positive Scenario – Money Transfer**
 
 📌 The user wants to transfer a certain amount between the two accounts they have.
@@ -227,7 +225,6 @@ included in the account transactions.
 ✅ Actual: The transaction with Transaction ID was found and the amount matched.
 
 ### **6️⃣ US_606 - Contact Info Update**
-
 #### ➕ **Positive Scenario – Contact Info Update**
 
 📌 The user wishes to update contact information such as address, city, postcode and telephone number.
@@ -238,7 +235,7 @@ this information must be correctly displayed when the user logs in again.
 ✅ Actual: The user updated the information, the system displayed a success message and the information was displayed
 correctly on the next login.
 
-<img src="testGifs/US305.gif" alt=".gif" width="800" height="500"/>
+<img src="testGifs/US_606.gif" alt=".gif" width="800" height="500"/>
 
 #### ➖ **Negative Scenario – Contact Info Update**
 
@@ -248,11 +245,9 @@ correctly on the next login.
 
 ✅ Actual: No update was made, warning messages were shown to the user.
 
-<img src="testGifs/US306.gif" alt=".gif" width="800" height="500"/>
 
 ### **7️⃣ US_607 - Loan Application**
-
-#### ➕ **Positive Scenario**
+#### ➕ **Positive Scenario - Loan Application**
 
 📌 The user wants to apply for a loan with valid data and expects approval.
 
@@ -264,7 +259,7 @@ were no transactions in the new account.
 
 <img src="testGifs/US_607_Positive.gif" alt="US_607_Positive" width="800" height="500"/>
 
-#### ➖ **Negative Scenario**
+#### ➖ **Negative Scenario - Loan Application**
 
 📌 The user tries to apply for a loan with invalid data and expects rejection.
 
@@ -282,12 +277,12 @@ rejection.
 | User Story | Description          | Status   |
 |------------|----------------------|----------|
 | US_601     | User Registration    | ✅ Passed |
-| US_602     | User Login           | ✅ Passed |
+| US_602     | User Login           | ❌ Failed |
 | US_603     | Bill Payment         | ✅ Passed |
 | US_604     | New Account Creation | ✅ Passed |
-| US_605     | Money Transfers      | ❌ Failed |
+| US_605     | Money Transfers      | ✅ Passed |
 | US_606     | Contact Info Update  | ❌ Failed |
-| US_607     | Loan Application     | ❌ Failed |
+| US_607     | Loan Application     | ✅ Passed |
 
 ---
 
@@ -325,9 +320,11 @@ Find reports inside:
 ## 📅 Bug Reports
 
 **Bug reports are tracked in the GitHub Issues section of the repository.**
+- **US_606 Contact Info Update**
+❌ when the user wanted to change any of his/her information, for example, 
+- even if he/she entered numbers or special characters in the surname, the system accepted this information. therefore a bug ticket was created.
 
-- **No bugs have been found.**
-
+- testBugReports/US_606 Contact Detail BugReports.pdf
 ---
 
 ## 👥 Project Team
