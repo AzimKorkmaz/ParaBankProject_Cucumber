@@ -1,6 +1,5 @@
 Feature: Funds Functionality
 
-
   Background:
     Given The user navigates to the ParaBank website
     When The user clicks on the register button and then fills the information areas with the customer data and clicks on the submit button
@@ -32,4 +31,3 @@ Feature: Funds Functionality
     And The user selects an account and enters the Transaction ID
     And The user click Find Transactions button
     Then The user should be redirected Account Details page
-

@@ -53,21 +53,21 @@ public class MoneyTransferSteps {
         ln.myClick(ln.accountsOverviewButton);
         GWD.getWait().until(ExpectedConditions.visibilityOf(dc.accountsOverviewTitle));
         dc.action.pause(Duration.ofSeconds(3));
-        List<WebElement> accountSize=dc.accounts;
+        List<WebElement> accountSize = dc.accounts;
 
-        System.out.println("Size=  " +accountSize.size());
+        System.out.println("Size=  " + accountSize.size());
         dc.myClick(accountSize.getLast());
 
         dc.myClick(dc.fundsTransferReceived);
 
         DateTimeFormatter formatter = DateTimeFormatter.ofPattern("MM-dd-yyyy");
-       // ZoneId zoneId = ZoneId.of("America/New_York");
+        // ZoneId zoneId = ZoneId.of("America/New_York");
         String today = LocalDate.now().format(formatter);
 
         System.out.println("Tarih  " + dc.transferDate.getText());
         Assert.assertEquals(dc.transferDate.getText(), today);
 
-        Assert.assertEquals(dc.transactionAmount.getText().replaceAll("[$]",""), ConfigReader.getProperty("transferAmount"));
+        Assert.assertEquals(dc.transactionAmount.getText().replaceAll("[$]", ""), ConfigReader.getProperty("transferAmount"));
 
     }
 
