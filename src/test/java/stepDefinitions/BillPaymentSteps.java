@@ -82,7 +82,7 @@ public class BillPaymentSteps {
 
         try {
             if (dc.igdasTransactionText.getText().contains("IGDAS")) found = true;
-            System.out.println("Igdass: " + dc.igdasTransactionText.getText());
+            System.out.println("Igdas: " + dc.igdasTransactionText.getText());
         } catch (Exception ignored) {}
 
         try {
