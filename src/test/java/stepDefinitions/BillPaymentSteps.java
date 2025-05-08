@@ -68,8 +68,8 @@ public class BillPaymentSteps {
         Assert.assertEquals(actualPayment,expectedPayment,"Error in payment");
     }
 
-    @And("clicks on his account number to check {string}")
-    public void clicksOnHisAccountNumberToCheck(String institution) {
+    @And("clicks on his account number to check institution")
+    public void clicksOnHisAccountNumberToCheck() {
         dc.myClick(dc.account);
         GWD.getWait().until(ExpectedConditions.visibilityOf(dc.accountDetailsText));
         dc.myClick(dc.billPaymentTransaction);
