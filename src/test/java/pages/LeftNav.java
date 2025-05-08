@@ -36,7 +36,7 @@ public class LeftNav extends ReusableMethods {
     @FindBy(xpath = "//b[text()='Welcome']")
     public WebElement welcomeText;
 
-    @FindBy(xpath = "//p[contains(text(), 'Malik')]")
+    @FindBy(xpath = "//p[contains(text(),'Malik')]")
     public WebElement confirmationMessage;
 
     @FindBy(xpath = "//a[text()='Transfer Funds']")
