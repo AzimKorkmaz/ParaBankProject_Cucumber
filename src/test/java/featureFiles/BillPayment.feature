@@ -17,11 +17,8 @@ Feature: Bill Payment Functionality
     Then The user clicks on the Accounts Overview button
     And checks the payment
     And clicks on his account number to check "<institution>"
-
-
     Examples:
       | institution |
       | TEDAS       |
       | IGDAS       |
       | ASAT        |
-

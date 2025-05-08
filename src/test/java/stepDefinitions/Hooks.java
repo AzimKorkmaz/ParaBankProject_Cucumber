@@ -7,7 +7,6 @@ import org.openqa.selenium.TakesScreenshot;
 import utilities.GWD;
 
 public class Hooks {
-
     @After
     public void after(Scenario scenario) {
         if (scenario.isFailed()) {

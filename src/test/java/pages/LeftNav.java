@@ -21,14 +21,8 @@ public class LeftNav extends ReusableMethods {
     @FindBy(linkText = "Accounts Overview")
     public WebElement accountsOverviewButton;
 
-    @FindBy(linkText = "Transfer Funds")
-    public WebElement transferFundsButton;
-
     @FindBy(linkText = "Bill Pay")
     public WebElement billPayButton;
-
-    @FindBy(linkText = "Find Transactions")
-    public WebElement findTransactionsButton;
 
     @FindBy(linkText = "Update Contact Info")
     public WebElement updateContactInfoButton;
@@ -44,4 +38,8 @@ public class LeftNav extends ReusableMethods {
 
     @FindBy(xpath = "//p[contains(text(), 'Malik')]")
     public WebElement confirmationMessage;
+
+    ///  loan application
+    @FindBy(xpath = "//h1[contains(@class, 'title') and contains(text(), 'Apply for a Loan')]")
+    public WebElement loanApplicationHeader;
 }
