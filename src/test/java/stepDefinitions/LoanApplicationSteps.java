@@ -27,8 +27,8 @@ public class LoanApplicationSteps {
     
     @When("User applies for a loan")
     public void userAppliesForALoan() {
-        String randomLoanAmount = String.valueOf(faker.number().numberBetween(1000, 5000));
-        String randomDownPayment = String.valueOf(faker.number().numberBetween(500, 1000));
+        String randomLoanAmount = String.valueOf(faker.number().numberBetween(1000, 2000));
+        String randomDownPayment = String.valueOf(faker.number().numberBetween(200, 500));
         GWD.getWait().until(ExpectedConditions.visibilityOf(dc.loanAmountField));
         dc.mySendKeys(dc.loanAmountField, randomLoanAmount);
         GWD.getWait().until(ExpectedConditions.visibilityOf(dc.downPaymentField));
