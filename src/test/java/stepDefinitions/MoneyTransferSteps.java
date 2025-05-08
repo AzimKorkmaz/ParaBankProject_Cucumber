@@ -15,7 +15,6 @@ import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 import java.util.List;
 
-
 public class MoneyTransferSteps {
     LeftNav ln = new LeftNav();
     DialogContent dc = new DialogContent();
@@ -68,7 +67,6 @@ public class MoneyTransferSteps {
         Assert.assertEquals(dc.transferDate.getText(), today);
 
         Assert.assertEquals(dc.transactionAmount.getText().replaceAll("[$]", ""), ConfigReader.getProperty("transferAmount"));
-
     }
 
     @When("The user does not enter anything to amount field")
@@ -81,7 +79,6 @@ public class MoneyTransferSteps {
         String actualMessage = dc.error.getText();
         Assert.assertEquals(message, actualMessage);
     }
-
 
     @When("The user clicks on Find Transactions button from homepage")
     public void theUserClicksOnFindTransactionsButtonFromHomepage() {

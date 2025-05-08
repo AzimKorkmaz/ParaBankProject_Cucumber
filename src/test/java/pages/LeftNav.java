@@ -45,9 +45,6 @@ public class LeftNav extends ReusableMethods {
     @FindBy(xpath = "//a[text()='Find Transactions']")
     public WebElement findTransactionsButton;
 
-
-
-    ///  loan application
     @FindBy(xpath = "//h1[contains(@class, 'title') and contains(text(), 'Apply for a Loan')]")
     public WebElement loanApplicationHeader;
 }

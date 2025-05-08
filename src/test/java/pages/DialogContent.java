@@ -18,7 +18,6 @@ public class DialogContent extends ReusableMethods {
         this.action = new Actions(GWD.getDriver());
     }
 
-    ///     Bill Payment Service LOCATORS
     @FindBy(xpath = "//h1[text()='Bill Payment Service']")
     public WebElement billPayPage;
 
@@ -55,7 +54,6 @@ public class DialogContent extends ReusableMethods {
     @FindBy(id = "billpayResult")
     public WebElement billPayResultField;
 
-    ///    Accounts Overview
     @FindBy(id = "showOverview")
     public WebElement showOverview;
 
@@ -65,11 +63,9 @@ public class DialogContent extends ReusableMethods {
     @FindBy(xpath = "//table[@id='accountTable']//a")
     public WebElement account;
 
-    ///     Account Details
     @FindBy(id = "accountDetails")
     public WebElement accountDetailsText;
 
-    ///     Account Activity
     @FindBy(xpath = "//a[contains(text(),'Bill Payment to')]")
     public WebElement billPaymentTransaction;
 
@@ -82,7 +78,6 @@ public class DialogContent extends ReusableMethods {
     @FindBy(xpath = "//td[contains(text(),'Bill Payment to IGDAS')]")
     public WebElement igdasTransactionText;
 
-    ///   Update contact Info
     @FindBy(xpath = "//td[contains(text(),'Bill Payment to ASAT')]")
     public WebElement asatTransactionText;
 
@@ -94,8 +89,6 @@ public class DialogContent extends ReusableMethods {
 
     @FindBy(xpath = "//h1[@class='title' and text()='Profile Updated']")
     public WebElement profileUpdated;
-
-    ///     Transfer funds
 
     @FindBy(id = "fromAccountId")
     public WebElement fromAccountDropDown;
@@ -130,9 +123,6 @@ public class DialogContent extends ReusableMethods {
     @FindBy(xpath = "(//td[@align='right']//following-sibling::td)[2]")
     public WebElement transferDate;
 
-    @FindBy(xpath = "//table[@id='transactionTable']//td[4]")
-    public WebElement credit;
-
     @FindBy(id = "amount")
     public WebElement transferAmount;
 
@@ -154,13 +144,9 @@ public class DialogContent extends ReusableMethods {
     @FindBy(xpath = "//a[@id='newAccountId']")
     public WebElement accountNumberClick;
 
-    @FindBy(xpath = "(//div[@id='accountDetails']//tr/td)[4]")
-    public WebElement accountType;
-
     @FindBy(xpath = "//input[@value='Open New Account']")
     public WebElement newAccount;
 
-    /// loan application
     @FindBy(id = "amount")
     public WebElement loanAmountField;
 

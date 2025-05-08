@@ -16,7 +16,7 @@ Feature: Bill Payment Functionality
     And clicks the SendPayment button
     Then The user clicks on the Accounts Overview button
     And checks the payment
-    And clicks on his account number to check "<institution>"
+    And clicks on his account number to check institution
     Examples:
       | institution |
       | TEDAS       |

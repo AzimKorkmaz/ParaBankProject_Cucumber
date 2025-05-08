@@ -17,7 +17,6 @@ Feature: Funds Functionality
     When The user clicks on Transfer Funds button from home page
 
   Scenario:  The user should be able to transfer funds successfully
-
     And The user fills all fields
     And The user clicks Transfer button
     Then The user should see a transfer message and confirm successful transfer completion
