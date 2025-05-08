@@ -8,10 +8,16 @@ import utilities.GWD;
 
 import java.time.LocalDateTime;
 
-@CucumberOptions(features = {"src/test/java/featureFiles"},
+@CucumberOptions(features = {"src/test/java/featureFiles/UserLogin.feature"},
         glue = {"stepDefinitions"},
         plugin = {"pretty", "com.aventstack.extentreports.cucumber.adapter.ExtentCucumberAdapter:"})
 public class AllTestRunner extends AbstractTestNGCucumberTests {
+
+    @BeforeClass
+    @Parameters("browserType")
+    public void beforeClass(String browserType) {
+        GWD.threadBrowserName.set(browserType);
+    }
 
     @AfterClass
     public void writeExtendReport() {
