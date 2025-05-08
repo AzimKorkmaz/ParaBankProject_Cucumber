@@ -1,5 +1,6 @@
 package pages;
 
+import org.eclipse.aether.spi.connector.Transfer;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.FindBy;
@@ -106,6 +107,53 @@ public class DialogContent extends ReusableMethods {
 
     @FindBy(xpath = "//h1[@class='title' and text()='Profile Updated']")
     public WebElement profileUpdated;
+
+    ///     Transfer funds
+
+    @FindBy(id = "fromAccountId")
+    public WebElement fromAccountDropDown;
+
+    @FindBy(id = "toAccountId")
+    public WebElement toAccountDropDown;
+
+    @FindBy(xpath = "//input[@type='submit']")
+    public WebElement transferButton;
+
+    @FindBy(xpath = "//h1[text()='Transfer Complete!']")
+    public WebElement transferMessage;
+
+    @FindBy(css = "div[id='showError'] h1[class='title']")
+    public WebElement error;
+
+    @FindBy(id = "accountId")
+    public WebElement selectAccountDropDown;
+
+    @FindBy(xpath = "//a[contains(@href, 'activity.htm?id=')]")
+    public List<WebElement> accounts;
+
+    @FindBy(xpath = "//a[text()='Funds Transfer Received']")
+    public WebElement fundsTransferReceived;
+
+    @FindBy(xpath = "//td[@align='right']/following-sibling::td")
+    public WebElement transactionId;
+
+    @FindBy(id = "findById")
+    public WebElement findButton;
+
+    @FindBy(xpath = "(//td[@align='right']//following-sibling::td)[2]")
+    public WebElement transferDate;
+
+    @FindBy(xpath = "//table[@id='transactionTable']//td[4]")
+    public WebElement credit;
+
+    @FindBy(id = "amount")
+    public WebElement transferAmount;
+
+    @FindBy(xpath = "(//h1[@class='title'])[1]")
+    public WebElement accountsOverviewTitle;
+
+    @FindBy(xpath = "(//td[@align='right']//following-sibling::td)[5]")
+    public WebElement transactionAmount;
 
     @FindBy(xpath = "(//*[text()='Open New Account'])[2]")
     public WebElement newAccountPageControl;
