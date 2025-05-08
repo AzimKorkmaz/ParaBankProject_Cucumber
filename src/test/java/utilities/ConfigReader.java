@@ -36,6 +36,9 @@ public class ConfigReader {
     public static int getIntProperty(String key) {
         return Integer.parseInt(properties.getProperty(key));
     }
+    public static double getDoubleProperty(String key) {
+        return Double.parseDouble(properties.getProperty(key));
+    }
 
     public static void saveToConfig(String key, String value) {
         properties.setProperty(key, value);
