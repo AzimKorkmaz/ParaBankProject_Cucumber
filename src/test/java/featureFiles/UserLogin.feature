@@ -12,4 +12,3 @@ Feature: User Logout and Login Functionality
 
     When The user fills in the login information and clicks the login button
     Then The user should be redirected to the account overview page
-

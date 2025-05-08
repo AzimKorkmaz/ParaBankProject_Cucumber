@@ -24,6 +24,7 @@ public class UserRegistrationSteps {
             GWD.getWait().until(ExpectedConditions.visibilityOf(ral.registerButton));
             GWD.getWait().until(ExpectedConditions.elementToBeClickable(ral.registerButton));
             ral.myClick(ral.registerButton);
+
             GWD.getWait().until(ExpectedConditions.visibilityOf(ral.firstNameField));
             ral.mySendKeys(ral.firstNameField, faker.name().firstName());
             ral.mySendKeys(ral.lastNameField, faker.name().lastName());
@@ -42,9 +43,11 @@ public class UserRegistrationSteps {
             ral.mySendKeys(ral.registerPasswordField, ConfigReader.getProperty("password"));
             GWD.getWait().until(ExpectedConditions.visibilityOf(ral.confirmPasswordField));
             ral.mySendKeys(ral.confirmPasswordField, ConfigReader.getProperty("password"));
+
             GWD.getWait().until(ExpectedConditions.elementToBeClickable(ral.registerSubmitButton));
             ral.myClick(ral.registerSubmitButton);
-        } while (ral.alreadyAdded());
+        }
+        while (ral.alreadyAdded());
     }
 
     @Then("Success message should be displayed")

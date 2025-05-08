@@ -70,7 +70,7 @@ ParaBankProject_Cucumber/
 │       │
 │       └── resources/                       # ExtentReports configuration
 │
-│
+├── testBugReports/                          # Bug reports (if any)
 ├── testGifs/                                # GIFs used in reports
 ├── testReports/                             # Spark & PDF report output (auto-generated)
 ├── configuration.properties                 # General test configuration
@@ -153,7 +153,8 @@ log in to the system.
 ### **2️⃣ US_602 - User Login**
 
 #### ➕ **Positive Scenario**
-📌  The user wants to log in to the system with a valid username and password.
+
+📌 The user wants to log in to the system with a valid username and password.
 
 ✅ Expected: The user must be able to log in successfully and then log out.
 
@@ -162,7 +163,8 @@ log in to the system.
 <img src="testGifs/US_602_Positive.gif" alt=".gif" width="800" height="500"/>
 
 #### ➖ **Negative Scenario**
-📌  The user is trying to log in to the system with invalid information.
+
+📌 The user is trying to log in to the system with invalid information.
 
 ✅ Expected: The input must fail and an appropriate error message must be displayed to the user.
 
@@ -172,70 +174,104 @@ log in to the system.
 
 ### **3️⃣ US_603 - Bill Payment**
 
-📌  The user wants to make payments by entering invoice types such as electricity, water or natural gas into the system.
+📌 The user wants to make payments by entering invoice types such as electricity, water or natural gas into the system.
 
 ✅ Expected: The payment must be successfully completed, updated in the system and appear in the payment list.
 
-✅ Actual: The user made the invoice payment, the system showed a successful message and it was included in the payment list.
+✅ Actual: The user made the invoice payment, the system showed a successful message and it was included in the payment
+list.
 
 <img src="testGifs/US303.gif" alt=".gif" width="800" height="500"/>
 
 ### **4️⃣ US_604 - New Account Creation**
+
 #### ➕ **Positive Scenario – Checking Account Creation**
 
 📌 The user wants to create a new demand deposit account on the para bank website.
 
 ✅ Expected: The user must create the new account, receive a confirmation message and see the account number.
 
-✅ Actual:  The user created a new demand deposit account, received a confirmation message and the account number was displayed.
+✅ Actual:  The user created a new demand deposit account, received a confirmation message and the account number was
+displayed.
 
 #### ➕ **Positive Scenario – Saving Account Creation**
 
 📌 The user wants to open a new term account by entering the parabank system.
 
-✅ Expected: The new account should be created successfully and the confirmation message and account number should be displayed.
+✅ Expected: The new account should be created successfully and the confirmation message and account number should be
+displayed.
 
-✅ Actual:  The user created the new term account, the system showed a successful message and provided the account number.
+✅ Actual:  The user created the new term account, the system showed a successful message and provided the account
+number.
 
 <img src="testGifs/US304.gif" alt=".gif" width="800" height="500"/>
 
 ### **5️⃣ US_605 - Money Transfer**
 
-📌 As a customer,
+#### ➕ **Positive Scenario – Money Transfer**
 
-✅ Expected:
+📌 The user wants to transfer a certain amount between the two accounts they have.
 
-✅ Actual:
+✅ Expected: The transfer must be successful, a confirmation message must be displayed to the user and the transaction
+must be included in the account statement.
 
-<img src="testGifs/US305.gif" alt=".gif" width="800" height="500"/>
+✅ Actual: The user transferred money, the system displayed a confirmation message and the transfer transaction was
+included in the account transactions.
+
+#### ➖ **Negative Scenario – Money Transfer**
+
+📌 The user wants to verify this transaction using the transaction ID of a past money transfer.
+
+✅ Expected: The transaction with the Transaction ID must be found and the transaction amount must be the same as before.
+
+✅ Actual: The transaction with Transaction ID was found and the amount matched.
 
 ### **6️⃣ US_606 - Contact Info Update**
 
-📌 As a customer,
+#### ➕ **Positive Scenario – Contact Info Update**
 
-✅ Expected:
+📌 The user wishes to update contact information such as address, city, postcode and telephone number.
 
-✅ Actual:
+✅ Expected: The updated information must be successfully saved, a confirmation message must be displayed and
+this information must be correctly displayed when the user logs in again.
+
+✅ Actual: The user updated the information, the system displayed a success message and the information was displayed
+correctly on the next login.
+
+<img src="testGifs/US305.gif" alt=".gif" width="800" height="500"/>
+
+#### ➖ **Negative Scenario – Contact Info Update**
+
+📌 The user is trying to update contact details with incomplete information.
+
+✅ Expected: The system should not allow updates and should display warning messages about missing fields.
+
+✅ Actual: No update was made, warning messages were shown to the user.
 
 <img src="testGifs/US306.gif" alt=".gif" width="800" height="500"/>
 
 ### **7️⃣ US_607 - Loan Application**
 
 #### ➕ **Positive Scenario**
-📌  The user wants to apply for a loan with valid data and expects approval.
 
-✅ Expected: The user must be able to apply for a loan, see the result instantly, receive an 'Approved' message, and see the new account number. The user should verify that there are no transactions in the new account.
+📌 The user wants to apply for a loan with valid data and expects approval.
 
-✅ Actual: The user applied for a loan, received an approval message, saw the new account number, and verified that there were no transactions in the new account.
+✅ Expected: The user must be able to apply for a loan, see the result instantly, receive an 'Approved' message, and see
+the new account number. The user should verify that there are no transactions in the new account.
+
+✅ Actual: The user applied for a loan, received an approval message, saw the new account number, and verified that there
+were no transactions in the new account.
 
 <img src="testGifs/US_607_Positive.gif" alt="US_607_Positive" width="800" height="500"/>
 
 #### ➖ **Negative Scenario**
-📌  The user tries to apply for a loan with invalid data and expects rejection.
+
+📌 The user tries to apply for a loan with invalid data and expects rejection.
 
 ✅ Expected: The user must see the result instantly, receive a 'Denied' message, and see the reason for the rejection.
 
-✅ Actual: The user applied for a loan with invalid data, received a denial message, and saw the reason for the rejection.
+✅ Actual: The user applied for a loan with invalid data, received a denial message, and saw the reason for the
+rejection.
 
 <img src="testGifs/US_607_Negative.gif" alt="US_607_Negative" width="800" height="500"/>
 
@@ -243,15 +279,15 @@ log in to the system.
 
 ## 🧰 User Stories & Test Scenarios
 
-| User Story | Description          | Status |
-|------------|----------------------|--------|
-| US_601     | User Registration    |        |
-| US_602     | User Login           |        |
-| US_603     | Bill Payment         |        |
-| US_604     | New Account Creation |        |
-| US_605     | Money Transfers      |        |
-| US_606     | Contact Info Update  |        |
-| US_607     | Loan Application     |        |
+| User Story | Description          | Status   |
+|------------|----------------------|----------|
+| US_601     | User Registration    | ✅ Passed |
+| US_602     | User Login           | ✅ Passed |
+| US_603     | Bill Payment         | ✅ Passed |
+| US_604     | New Account Creation | ✅ Passed |
+| US_605     | Money Transfers      | ❌ Failed |
+| US_606     | Contact Info Update  | ❌ Failed |
+| US_607     | Loan Application     | ❌ Failed |
 
 ---
 
@@ -319,6 +355,8 @@ Find reports inside:
 - [Tugba Kilic](https://github.com/TugbaKilic33)
 - [Nuri Öztürk](https://github.com/NuriOzturk)
 - [Azim Korkmaz](https://github.com/AzimKorkmaz)
+- [Yigit Cam](https://github.com/Yigit-Cam)
+- [Sibel Oztemel](https://github.com/Sibel52)
 
 ---
 

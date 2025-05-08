@@ -8,8 +8,6 @@ import org.openqa.selenium.support.PageFactory;
 import utilities.GWD;
 import utilities.ReusableMethods;
 
-import java.util.List;
-
 public class DialogContent extends ReusableMethods {
     public Actions action;
 
@@ -19,7 +17,6 @@ public class DialogContent extends ReusableMethods {
     }
 
     ///     Bill Payment Service LOCATORS
-
     @FindBy(xpath = "//h1[text()='Bill Payment Service']")
     public WebElement billPayPage;
 
@@ -50,20 +47,13 @@ public class DialogContent extends ReusableMethods {
     @FindBy(name = "amount")
     public WebElement amountField;
 
-    @FindBy(name = "fromAccountId")
-    public WebElement fromAccountIdField;
-
     @FindBy(xpath = "//input[@value='Send Payment']")
     public WebElement sendPaymentButton;
 
     @FindBy(id = "billpayResult")
     public WebElement billPayResultField;
 
-    @FindBy(xpath = "//div[@id='billpayResult']/h1")
-    public WebElement billPayResultFieldText;
-
     ///    Accounts Overview
-
     @FindBy(id = "showOverview")
     public WebElement showOverview;
 
@@ -74,15 +64,10 @@ public class DialogContent extends ReusableMethods {
     public WebElement account;
 
     ///     Account Details
-
-    @FindBy(xpath = "//td[@id='balance']")
-    public WebElement lastAvailable;
-
     @FindBy(id = "accountDetails")
     public WebElement accountDetailsText;
 
     ///     Account Activity
-
     @FindBy(xpath = "//a[contains(text(),'Bill Payment to')]")
     public WebElement billPaymentTransaction;
 
@@ -161,12 +146,6 @@ public class DialogContent extends ReusableMethods {
     @FindBy(xpath = "//select[@id='type']")
     public WebElement selectMenu;
 
-    @FindBy(xpath = "(//div[@id='openAccountForm']/form/p/b)[2]")
-    public WebElement minBalanceText;
-
-    @FindBy(xpath = "//select[@id='fromAccountId']/option")
-    public List<WebElement> selectAccountNumber;
-
     @FindBy(xpath = "//div[@id='openAccountResult']//p")
     public WebElement accountOpenedText;
 
@@ -178,4 +157,35 @@ public class DialogContent extends ReusableMethods {
 
     @FindBy(xpath = "//input[@value='Open New Account']")
     public WebElement newAccount;
+
+    /// loan application
+    @FindBy(id = "amount")
+    public WebElement loanAmountField;
+
+    @FindBy(id = "downPayment")
+    public WebElement downPaymentField;
+
+    @FindBy(id = "fromAccountId")
+    public WebElement fromAccountSelect;
+
+    @FindBy(xpath = "//input[@type='button' and @class='button' and @value='Apply Now']")
+    public WebElement applyNowButton;
+
+    @FindBy(id = "loanStatus")
+    public WebElement loanStatus;
+
+    @FindBy(xpath = "//div[@id='loanRequestApproved']/p[contains(text(), 'Congratulations')]")
+    public WebElement approvedMessage;
+
+    @FindBy(xpath = "//div[@id='loanRequestDenied']/p[contains(@class, 'error')]")
+    public WebElement deniedMessage;
+
+    @FindBy(xpath = "//div[@id='loanRequestDenied']/p[contains(@class, 'error')]")
+    public WebElement denialReason;
+
+    @FindBy(id = "newAccountId")
+    public WebElement newAccountNumber;
+
+    @FindBy(id = "noTransactions")
+    public WebElement noTransactionsMessage;
 }
