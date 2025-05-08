@@ -108,8 +108,8 @@ public class DialogContent extends ReusableMethods {
     @FindBy(id = "accountId")
     public WebElement selectAccountDropDown;
 
-    @FindBy(xpath = "//a[contains(@href, 'activity.htm?id=')]")
-    public List<WebElement> accounts;
+    @FindBy(xpath = "(//a[contains(@href, 'activity.htm?id=')])[1]") //(//a[contains(@href, 'activity.htm?id=')])[2]
+    public WebElement accounts;
 
     @FindBy(xpath = "//a[text()='Funds Transfer Received']")
     public WebElement fundsTransferReceived;
@@ -176,4 +176,10 @@ public class DialogContent extends ReusableMethods {
 
     @FindBy(id = "noTransactions")
     public WebElement noTransactionsMessage;
+
+    @FindBy(css = "div[id='resultContainer'] h1[class='title']")
+    public WebElement transactionResultsTitle;
+
+    @FindBy(xpath = "//input[@id='transactionId']")
+    public WebElement transactionIdField;
 }

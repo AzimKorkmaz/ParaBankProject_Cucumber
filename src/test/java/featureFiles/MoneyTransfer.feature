@@ -24,7 +24,7 @@ Feature: Funds Functionality
     When The user clicks on Transfer Funds button from home page
     When The user does not enter anything to amount field
     And The user clicks Transfer button
-    Then The user should see "Error!" error message on transfer funds page
+    Then The user should see error message on transfer funds page
 
     When The user clicks on Find Transactions button from homepage
     And The user selects an account and enters the Transaction ID
