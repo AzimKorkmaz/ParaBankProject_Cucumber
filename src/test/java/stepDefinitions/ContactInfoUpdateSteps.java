@@ -13,7 +13,6 @@ public class ContactInfoUpdateSteps {
     RegisterAndLogin ral = new RegisterAndLogin();
     LeftNav ln = new LeftNav();
     DialogContent dc = new DialogContent();
-    String surName = ConfigReader.getProperty("surName");
 
     @Given("User click on the Update Contact Info button")
     public void userClickOnTheUpdateContactInfoButton() {
@@ -41,7 +40,7 @@ public class ContactInfoUpdateSteps {
     @Then("User will update the relevant field")
     public void userWillUpdateTheRelevantField() {
         ral.myClick(ral.lastNameField);
-        ral.lastNameField.sendKeys(surName);
+        ral.mySendKeys(ral.lastNameField,ConfigReader.getProperty("surname"));
     }
 
     @And("User will see the update message")
