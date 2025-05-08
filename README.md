@@ -181,7 +181,7 @@ log in to the system.
 ✅ Actual: The user made the invoice payment, the system showed a successful message and it was included in the payment
 list.
 
-<img src="testGifs/US303.gif" alt=".gif" width="800" height="500"/>
+<img src="testGifs/US_603_.gif" alt=".gif" width="800" height="500"/>
 
 ### **4️⃣ US_604 - New Account Creation**
 
