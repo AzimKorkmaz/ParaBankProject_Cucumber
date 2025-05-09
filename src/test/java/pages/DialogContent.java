@@ -1,11 +1,9 @@
 package pages;
 
-import org.openqa.selenium.WebElement;
+import org.openqa.selenium.*;
 import org.openqa.selenium.interactions.Actions;
-import org.openqa.selenium.support.FindBy;
-import org.openqa.selenium.support.PageFactory;
-import utilities.GWD;
-import utilities.ReusableMethods;
+import org.openqa.selenium.support.*;
+import utilities.*;
 
 public class DialogContent extends ReusableMethods {
     public Actions action;
@@ -105,7 +103,7 @@ public class DialogContent extends ReusableMethods {
     @FindBy(id = "accountId")
     public WebElement selectAccountDropDown;
 
-    @FindBy(xpath = "(//a[contains(@href, 'activity.htm?id=')])[1]") //(//a[contains(@href, 'activity.htm?id=')])[2]
+    @FindBy(xpath = "(//a[contains(@href, 'activity.htm?id=')])[1]")
     public WebElement accounts;
 
     @FindBy(xpath = "//a[text()='Funds Transfer Received']")
