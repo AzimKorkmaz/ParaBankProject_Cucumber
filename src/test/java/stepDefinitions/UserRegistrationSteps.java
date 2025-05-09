@@ -24,6 +24,7 @@ public class UserRegistrationSteps {
         GWD.getWait().until(ExpectedConditions.elementToBeClickable(ral.registerButton));
         ral.myClick(ral.registerButton);
         do {
+            GWD.getWait().until(ExpectedConditions.elementToBeClickable(ral.registerSubmitButton));
             GWD.getWait().until(ExpectedConditions.visibilityOf(ral.firstNameField));
             ral.mySendKeys(ral.firstNameField, faker.name().firstName());
             ral.mySendKeys(ral.lastNameField, faker.name().lastName());
