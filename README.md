@@ -355,7 +355,7 @@ the website does not show the transfer made. Transfers made with other query fie
 
 ## 🔗 GitHub Links
 
-- 📁 [Main Repository](https://github.com/AzimKorkmaz/ParaBankProject_Cucumber)
+- 📁 [Main Repository](https://github.com/zaferatakli/ParaBankCucumberProject)
 
 **Contributors:**
 

@@ -20,10 +20,11 @@ public class UserRegistrationSteps {
 
     @When("The user clicks on the register button and then fills the information areas with the customer data and clicks on the submit button")
     public void theUserClicksOnTheRegisterButtonAndThenFillsTheInformationAreasWithTheCustomerDataAndClicksOnTheSubmitButton() {
-        GWD.getWait().until(ExpectedConditions.visibilityOf(ral.registerButton));
-        GWD.getWait().until(ExpectedConditions.elementToBeClickable(ral.registerButton));
-        ral.myClick(ral.registerButton);
         do {
+            GWD.getWait().until(ExpectedConditions.visibilityOf(ral.registerButton));
+            GWD.getWait().until(ExpectedConditions.elementToBeClickable(ral.registerButton));
+            ral.myClick(ral.registerButton);
+
             GWD.getWait().until(ExpectedConditions.elementToBeClickable(ral.registerSubmitButton));
             GWD.getWait().until(ExpectedConditions.visibilityOf(ral.firstNameField));
             ral.mySendKeys(ral.firstNameField, faker.name().firstName());
