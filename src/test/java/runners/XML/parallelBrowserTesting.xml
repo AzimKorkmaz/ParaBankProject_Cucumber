@@ -9,7 +9,7 @@
         </classes>
     </test>
     <test name="Edge">
-        <parameter name="browserType" value="edge"/>
+        <parameter name="browserType" value="firefox"/>
         <classes>
             <class name="runners.ParallelAllRunner"/>
         </classes>
