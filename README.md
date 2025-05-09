@@ -110,7 +110,6 @@ Ensure Maven updates all packages automatically.
    ```bash
    mvn clean install
    ```
-
 ---
 
 ## 🛠️ Usage
@@ -214,8 +213,10 @@ number.
 ✅ Expected: The transfer must be successful, a confirmation message must be displayed to the user and the transaction
 must be included in the account statement.
 
-✅ Actual: The user transferred money, the system displayed a confirmation message and the transfer transaction was
-included in the account transactions.
+❌ Actual: After the money transfer, when you go to the Find Transactions link and query the Transaction ID, 
+the website does not show the transfer made. Transfers made with other query fields such as transfer date, transfer amount are displayed.
+
+<img src="testGifs/US_605_.gif" alt=".gif" width="800" height="500"/>
 
 #### ➖ **Negative Scenario – Money Transfer**
 
@@ -233,8 +234,8 @@ included in the account transactions.
 ✅ Expected: The updated information must be successfully saved, a confirmation message must be displayed and
 this information must be correctly displayed when the user logs in again.
 
-✅ Actual: The user updated the information, the system displayed a success message and the information was displayed
-correctly on the next login.
+❌ Actual: When the user wanted to change any of his/her information, for example,
+even if he/she entered numbers or special characters in the surname, the system accepted this information. therefore a bug ticket was created.
 
 <img src="testGifs/US_606.gif" alt=".gif" width="800" height="500"/>
 
@@ -278,10 +279,10 @@ rejection.
 | User Story | Description          | Status   |
 |------------|----------------------|----------|
 | US_601     | User Registration    | ✅ Passed |
-| US_602     | User Login           | ✅ Passed|
+| US_602     | User Login           | ✅ Passed |
 | US_603     | Bill Payment         | ✅ Passed |
 | US_604     | New Account Creation | ✅ Passed |
-| US_605     | Money Transfers      | ✅ Passed |
+| US_605     | Money Transfers      | ❌ Failed |
 | US_606     | Contact Info Update  | ❌ Failed |
 | US_607     | Loan Application     | ✅ Passed |
 
@@ -323,14 +324,18 @@ Find reports inside:
 **Bug reports are tracked in the GitHub Issues section of the repository.**
 
 **US_606 Contact Info Update**
-
 ❌ when the user wanted to change any of his/her information, for example, 
 even if he/she entered numbers or special characters in the surname, the system accepted this information. therefore a bug ticket was created.
+
+**US_605 Money Transfers**
+❌ After the money transfer, when you go to the Find Transactions link and query the Transaction ID,
+the website does not show the transfer made. Transfers made with other query fields such as transfer date, transfer amount are displayed.
 
 ---
 
 ```markdown
 - testBugReports/US_606 Contact Detail BugReports.pdf
+- testBugReports/US_605 Transfer Money Between My Accounts BugReports.pdf
 ```
 ---
 
