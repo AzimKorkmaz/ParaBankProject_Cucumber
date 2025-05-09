@@ -192,7 +192,7 @@ list.
 ✅ Actual:  The user created a new demand deposit account, received a confirmation message and the account number was
 displayed.
 
-<img src="testGifs/US_604.gif" alt=".gif" width="800" height="500"/>
+<img src="testGifs/US_604_.gif" alt=".gif" width="800" height="500"/>
 
 #### ➕ **Positive Scenario – Saving Account Creation**
 
