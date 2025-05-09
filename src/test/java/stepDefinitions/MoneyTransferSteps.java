@@ -3,15 +3,11 @@ package stepDefinitions;
 import com.github.javafaker.Faker;
 import io.cucumber.java.en.*;
 import org.junit.Assert;
-import org.openqa.selenium.support.ui.ExpectedConditions;
-import org.openqa.selenium.support.ui.Select;
-import pages.DialogContent;
-import pages.LeftNav;
-import utilities.ConfigReader;
-import utilities.GWD;
+import org.openqa.selenium.support.ui.*;
+import pages.*;
+import utilities.*;
 
-import java.time.Duration;
-import java.time.LocalDate;
+import java.time.*;
 import java.time.format.DateTimeFormatter;
 
 public class MoneyTransferSteps {
@@ -59,20 +55,15 @@ public class MoneyTransferSteps {
         ConfigReader.saveToConfig("transactionId", dc.transactionId.getText());
 
         DateTimeFormatter formatter = DateTimeFormatter.ofPattern("MM-dd-yyyy");
-        // ZoneId zoneId = ZoneId.of("America/New_York");
         String today = LocalDate.now().format(formatter);
 
-        System.out.println("Tarih  " + dc.transferDate.getText());
         Assert.assertEquals(dc.transferDate.getText(), today);
         String actualAmount = dc.transactionAmount.getText().replaceAll("[$,.]", "").substring(0, 3);
-        System.out.println("Expected Amount: " + expectedAmount);
-        System.out.println("Actual Amount: " + actualAmount);
         Assert.assertEquals(expectedAmount, actualAmount);
     }
 
     @When("The user does not enter anything to amount field")
     public void theUserDoesNotEnterAnythingToAmountField() {
-        //dc.mySendKeys(dc.amountField, " ");
         dc.myClick(dc.transferButton);
     }
 
