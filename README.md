@@ -122,6 +122,7 @@ Ensure Maven updates all packages automatically.
 - To run **specific browser tests**:
     - Open `singleBrowserTesting.xml` or `parallelBrowserTesting.xml` in the `runners/XML/` folder.
     - Right-click and run the XML file.
+    - Or You can run the feature file directly by right-clicking on the feature file in the `featureFiles/` folder.
 
 ---
 
@@ -277,7 +278,7 @@ rejection.
 | User Story | Description          | Status   |
 |------------|----------------------|----------|
 | US_601     | User Registration    | ✅ Passed |
-| US_602     | User Login           | ❌ Failed |
+| US_602     | User Login           | ✅ Passed|
 | US_603     | Bill Payment         | ✅ Passed |
 | US_604     | New Account Creation | ✅ Passed |
 | US_605     | Money Transfers      | ✅ Passed |
@@ -320,11 +321,17 @@ Find reports inside:
 ## 📅 Bug Reports
 
 **Bug reports are tracked in the GitHub Issues section of the repository.**
-- **US_606 Contact Info Update**
-❌ when the user wanted to change any of his/her information, for example, 
-- even if he/she entered numbers or special characters in the surname, the system accepted this information. therefore a bug ticket was created.
 
+**US_606 Contact Info Update**
+
+❌ when the user wanted to change any of his/her information, for example, 
+even if he/she entered numbers or special characters in the surname, the system accepted this information. therefore a bug ticket was created.
+
+---
+
+```markdown
 - testBugReports/US_606 Contact Detail BugReports.pdf
+```
 ---
 
 ## 👥 Project Team

@@ -33,12 +33,6 @@ public class ReusableMethods {
         js.executeScript("arguments[0].scrollIntoView();", element);
     }
 
-    public void jsClickToElement(WebElement element) {
-        GWD.getWait().until(ExpectedConditions.elementToBeClickable(element));
-        JavascriptExecutor js = (JavascriptExecutor) GWD.getDriver();
-        js.executeScript("arguments[0].click();", element);
-    }
-
     public void selectByText(WebElement element, String text) {
         GWD.getWait().until(ExpectedConditions.visibilityOf(element));
         Select select = new Select(element);

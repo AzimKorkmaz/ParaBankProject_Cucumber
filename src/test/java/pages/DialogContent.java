@@ -1,14 +1,11 @@
 package pages;
 
-import org.eclipse.aether.spi.connector.Transfer;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import utilities.GWD;
 import utilities.ReusableMethods;
-
-import java.util.List;
 
 public class DialogContent extends ReusableMethods {
     public Actions action;
